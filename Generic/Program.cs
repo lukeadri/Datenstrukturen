@@ -1,23 +1,23 @@
-﻿namespace GenerischeKlassen
+﻿using Generic;
+
+namespace GenerischeKlassen
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(String[] args)
         {
-            var itemStore = new ItemStore<int, double, string>();
-            itemStore.Value1 = 5;
-            itemStore.Value2 = 4.5;
-            itemStore.Value3 = "2";
+            LinkedList list1 = new LinkedList();
 
-            var summe = 6 + itemStore.Value1;
+            list1.head = new Node(1);
+            Node second = new Node(2);
+            Node third = new Node(3);
 
+            list1.head.next = second;
+            second.next = third;
+
+            list1.printList();
+            list1.insert(4);
+            list1.count();
         }
     }
-
-    class ItemStore<TValueType1, TValueType2, TValueType3>
-    {
-        public TValueType1 Value1 { get; set; }
-        public TValueType2 Value2 { get; set; }
-        public TValueType3 Value3 { get; set; }
-    }
-}
+} 
