@@ -15,9 +15,13 @@ namespace GenerischeKlassen
             list1.head.next = second;
             second.next = third;
 
-            list1.printList();
-            list1.insert(4);
-            list1.count();
+            list1.after(87, 2);
+            list1.getNode(1);
+            list1.insertLast(4);
+            list1.countNode();
+            list1.insertFirst(0);
+            list1.deleteNode();
+            list1.printList();            
         }
     }
 } 
