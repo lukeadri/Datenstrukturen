@@ -6,7 +6,7 @@ namespace GenerischeKlassen
     {
         public static void Main(String[] args)
         {
-            LinkedList list1 = new LinkedList();
+            SimpleLinkedList list1 = new SimpleLinkedList();
 
             list1.head = new Node(1);
             Node second = new Node(2);

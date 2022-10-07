@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestProject2
+namespace SingleLinkedListTest
 {
-    internal class SingleLinkedListTest
+    internal class SimpleLinkedListTest
     {
 
     }

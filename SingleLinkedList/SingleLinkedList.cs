@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Generic
 {
-    public class LinkedList
+    public class SimpleLinkedList
     {
         public Node head;
 
