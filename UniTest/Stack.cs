@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace TestProject2
+namespace UniTest
 {
-    public class Tests
+    public class Stack
     {
         [SetUp]
         public void Setup()
