@@ -117,6 +117,11 @@ namespace Generic
             }
         }
 
+        public Node GetHead()
+        {
+            return this.head;
+        }
+
         public void after(int newElement, int nodePosition)
         {
             Node newNode = new Node(0);
