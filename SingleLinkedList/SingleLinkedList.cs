@@ -68,53 +68,41 @@ namespace Generic
             head = newNode;
         }
 
-        public void getNode(int argData)
+        public Node getNode(int argData)
         {
             Node temp = new Node(0);
             temp = this.head;
-
-            int found = 0;
-            int i = 0;
 
             if (temp != null)
             {
 
                 while (temp != null)
                 {
-                    i++;
                     if (temp.data == argData)
                     {
-                        found++;
-                        break;
+                        return temp;
                     }
                     temp = temp.next;
                 }
-
-                if (found == 1)
-                {
-                    Console.WriteLine(argData + " befindet sich an der Stelle " + i);
-                }
-
-                else
-                {
-                    Console.WriteLine(argData + " befindet sich nicht in der Liste");
-                }
             }
+            return null;
         }
 
-        public void deleteNode()
+        public Node deleteNode()
         {
             if (this.head != null)
             {
                 Node temp = this.head;
                 this.head = this.head.next;
                 temp = null;
+                return temp;
                 Console.WriteLine("true");
             }
             else
             {
                 Console.WriteLine("false");
             }
+            return null;
         }
 
         public Node GetHead()
@@ -122,41 +110,24 @@ namespace Generic
             return this.head;
         }
 
-        public void after(int newElement, int nodePosition)
+        public void after(Node insertafter, int new_data)
         {
-            Node newNode = new Node(0);
-            newNode.data = newElement;
-            newNode.next = null;
-
-            if (nodePosition < 1)
+            if (after == null)
             {
-                Console.Write("Die gewünschte Position des Nodes muss größer als 0 sein");
+                Console.WriteLine("Dieser Node existiert nicht");
+                return;
             }
+            Node new_node = new Node(new_data);
+            new_node.next = insertafter.next;
+            insertafter.next = new_node;
+        }
 
-            else if (nodePosition == 1)
-            {
-                newNode.next = head;
-                head = newNode;
-            }
-
-            else
-            {
-                Node temp = new Node(0);
-                temp = head;
-                for (int i = 1; i < nodePosition - 1; i++)
-                {
-                    if (temp != null)
-                    {
-                        temp = temp.next;
-                    }
-                }
-
-                if (temp != null)
-                {
-                    newNode.next = temp.next;
-                    temp.next = newNode;
-                }
-            }
+        public Node SwitchNodes(Node firstNode, Node secondNode)
+        {
+            int val = firstNode.data;
+            firstNode.data = secondNode.data;
+            secondNode.data = val;
+            return firstNode;
         }
     }
 }
