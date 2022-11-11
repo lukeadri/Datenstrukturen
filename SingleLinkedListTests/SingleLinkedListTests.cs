@@ -87,5 +87,18 @@ namespace SingleLinkedListTests
 
             Assert.AreEqual(2, node.data);
         }
+
+        [Test]
+        public void InsertionSortInverse_listSorted_BiggestToLowest()
+        {
+            var myLL = new SimpleLinkedList();
+            myLL.insertFirst(10);
+            myLL.insertFirst(1);
+            myLL.insertFirst(5);
+            myLL.insertionSortInverse(myLL.head);
+            Assert.AreEqual(myLL.head.data, 10);
+            Assert.AreEqual(myLL.head.next.data, 5);
+            Assert.AreEqual(myLL.head.next.next.data, 1);
+        }
     }
 }

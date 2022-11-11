@@ -9,6 +9,7 @@ namespace Generic
     public class SimpleLinkedList
     {
         public Node head;
+        public Node sorted;
 
         public void printList()
         {
@@ -128,6 +129,76 @@ namespace Generic
             firstNode.data = secondNode.data;
             secondNode.data = val;
             return firstNode;
+        }
+
+        public void insertionSort(Node list)
+        {
+            sorted = null;
+            Node current = list;
+
+            while (current != null)
+            {
+                Node next = current.next;
+                sortedInsert(current);
+                current = next;
+            }
+            head = sorted;
+        }
+
+        void sortedInsert(Node newNode)
+        {
+            if (sorted == null || sorted.data <= newNode.data)
+            {
+                newNode.next = sorted;
+                sorted = newNode;
+            }
+            else
+            {
+                Node current = sorted;
+
+                while (current.next != null &&
+                        current.next.data > newNode.data)
+                {
+                    current = current.next;
+                }
+                newNode.next = current.next;
+                current.next = newNode;
+            }
+        }
+
+        public void insertionSortInverse(Node list)
+        {
+            sorted = null;
+            Node current = list;
+
+            while (current != null)
+            {
+                Node next = current.next;
+                sortedInsertInverse(current);
+                current = next;
+            }
+            head = sorted;
+        }
+
+        void sortedInsertInverse(Node newNode)
+        {
+            if (sorted == null || sorted.data <= newNode.data)
+            {
+                newNode.next = sorted;
+                sorted = newNode;
+            }
+            else
+            {
+                Node current = sorted;
+
+                while (current.next != null &&
+                        current.next.data > newNode.data)
+                {
+                    current = current.next;
+                }
+                newNode.next = current.next;
+                current.next = newNode;
+            }
         }
     }
 }
