@@ -1,9 +1,10 @@
 using Generic;
 using NUnit.Framework;
 
+
 namespace SingleLinkedListTests
 {
-    public class SingleLinkedListTests
+    public class Tests
     {
         [SetUp]
         public void Setup()
@@ -99,6 +100,62 @@ namespace SingleLinkedListTests
             Assert.AreEqual(myLL.head.data, 10);
             Assert.AreEqual(myLL.head.next.data, 5);
             Assert.AreEqual(myLL.head.next.next.data, 1);
+        }
+
+        [Test]
+        public void BubbleSort()
+        {
+            var myLL = new SimpleLinkedList();
+            myLL.insertFirst(10);
+            myLL.insertFirst(1);
+            myLL.insertFirst(5);
+            myLL.BubbleSort();
+            Assert.AreEqual(myLL.head.data, 1);
+            Assert.AreEqual(myLL.head.next.data, 5);
+            Assert.AreEqual(myLL.head.next.next.data, 10);
+        }
+
+        [Test]
+        public void Insert_AddsNodeToTree()
+        {
+            BinaryTree tree = new BinaryTree();
+            tree.Inserttree(5);
+
+            Assert.AreEqual(5, tree.root.data);
+            Assert.IsNull(tree.root.left);
+            Assert.IsNull(tree.root.right);
+        }
+
+        [Test]
+        public void Insert_AddsNodesInCorrectOrder()
+        {
+            BinaryTree tree = new BinaryTree();
+            tree.Inserttree(5);
+            tree.Inserttree(3);
+            tree.Inserttree(7);
+            tree.Inserttree(2);
+            tree.Inserttree(4);
+            tree.Inserttree(6);
+            tree.Inserttree(8);
+
+            Assert.AreEqual(5, tree.root.data);
+            Assert.AreEqual(3, tree.root.left.data);
+            Assert.AreEqual(2, tree.root.left.left.data);
+            Assert.AreEqual(4, tree.root.left.right.data);
+            Assert.AreEqual(7, tree.root.right.data);
+            Assert.AreEqual(6, tree.root.right.left.data);
+            Assert.AreEqual(8, tree.root.right.right.data);
+        }
+
+        [Test]
+        public void TestQuickSort()
+        {
+            int[] arr = { 10, 7, 8, 9, 1, 5 };
+            int[] expected = { 1, 5, 7, 8, 9, 10 };
+
+            Program.QuickSort(arr, 0, arr.Length - 1);
+
+            Assert.AreEqual(expected, arr);
         }
     }
 }

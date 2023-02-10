@@ -200,5 +200,28 @@ namespace Generic
                 current.next = newNode;
             }
         }
+
+        public void BubbleSort()
+        {
+            var Node = head;
+
+            while (Node != null)
+            {
+                for (var cur = head; cur.next != null; cur = cur.next)
+                {
+                    if (cur.next == null)
+                    {
+                        continue;
+                    }
+                    if (cur.data > cur.next.data)
+                    {
+                        (cur.data, cur.next.data) = (cur.next.data, cur.data);
+                    }
+                }
+                Node = Node.next;
+            }
+            Console.WriteLine("BubbleSorted list ");
+        }
     }
+  
 }

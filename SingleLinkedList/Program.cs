@@ -1,5 +1,6 @@
 ﻿using Generic;
 
+
 namespace GenerischeKlassen
 {
     class Program
@@ -18,9 +19,11 @@ namespace GenerischeKlassen
             var node = list1.getNode(1);
             var node1 = list1.getNode(2);
 
+
             list1.insertFirst(10);
-            list1.insertionSortInverse(list1.head);
-            list1.printList();   
+            list1.BubbleSort();
+            list1.printList();
+
         }
     }
 } 
