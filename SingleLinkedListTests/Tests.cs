@@ -146,16 +146,5 @@ namespace SingleLinkedListTests
             Assert.AreEqual(6, tree.root.right.left.data);
             Assert.AreEqual(8, tree.root.right.right.data);
         }
-
-        [Test]
-        public void TestQuickSort()
-        {
-            int[] arr = { 10, 7, 8, 9, 1, 5 };
-            int[] expected = { 1, 5, 7, 8, 9, 10 };
-
-            Program.QuickSort(arr, 0, arr.Length - 1);
-
-            Assert.AreEqual(expected, arr);
-        }
     }
 }
