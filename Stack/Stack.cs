@@ -2,6 +2,7 @@
 {
     public class Stack<T>
     {
+
         List<T> items = new List<T>();
         public void Push(T item)
         {
